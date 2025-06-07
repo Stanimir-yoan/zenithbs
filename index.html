@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Your Website Title</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+  <!-- Font Awesome -->
+  <link 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" 
+    rel="stylesheet" 
+    integrity="sha512-...replace-with-valid-integrity..." 
+    crossorigin="anonymous" 
+    referrerpolicy="no-referrer" 
+  />
+
+  <!-- Your Custom CSS -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="m-0">
+
+
+
+   <div id="loadingScreen">
+     <div class="expandingCircle"></div>
+    <div class="box rightBox"></div>
+    <div class="box leftBox"></div>
+  </div>
+
+  <!-- Modal -->
+<div class="modal fade" id="appointmentModal" tabindex="-1" aria-labelledby="appointmentModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      
+      <div class="modal-header">
+        <h5 class="modal-title" id="appointmentModalLabel">Get A FREE Quote</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+        <form id="appointmentForm">
+          <div class="mb-3">
+            <label for="name" class="form-label">Full Name</label>
+            <input type="text" class="form-control" id="name" required>
+          </div>
+          
+          <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="email" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="phone" class="form-label">Phone Number</label>
+            <input type="tel" class="form-control" id="phone" required>
+          </div>
+
+         
+
+          <div class="mb-3">
+            <label for="message" class="form-label">Job Request Details</label>
+            <textarea class="form-control" id="message" rows="3"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+    <div id="mainContent">
+
+    <!-- Top Bar with Angled Split -->
+    <div class="top-bar">
+        <div class="top-bar-left">
+            <i class="bi bi-envelope-fill"></i>
+            <span class="email-text">contact@example.com</span>
+        </div>
+    </div>
+
+
+    <nav class="main-navbar navbar navbar-expand-md bg-white px-3">
+        <div class="container p-0 d-flex align-items-center">
+          <!-- Logo - 25% width -->
+          <a class="navbar-brand flex-shrink-0" href="index.html">
+            <img src="images/logo.svg" alt="Logo" style="max-height: 70px;" /><span>ZENITH BS ELECTICAL</span>
+          </a>
+      
+          <!-- Toggler button visible on small screens -->
+          <button
+            class="navbar-toggler ms-auto"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#mainNavbarNav"
+            aria-controls="mainNavbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+      
+          <!-- Collapsible menu items -->
+          <div
+            class="collapse navbar-collapse flex-grow-1"
+            id="mainNavbarNav"
+            style="justify-content: flex-end;"
+          >
+            <ul class="navbar-nav d-flex align-items-center gap-3 mb-0">
+              <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+              <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+              <li class="nav-item"><a class="nav-link" href="prices.html">Prices</a></li>
+              <li class="nav-item"><a class="nav-link" href="faqs.html">FAQs</a></li>
+              <li class="nav-item"><a class="nav-link" href="contacts.html">Contacts</a></li>
+              <li class="nav-item">
+                <button class="btn btn-quick-call d-flex align-items-center">
+                  <i class="bi bi-telephone-fill"></i>
+                  <span>Quick Call</span>
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+      
+      
+
+  <!-- HERO-SECTION -->
+  <div id="hero-section">
+    <div class="container px-0 h-100 d-flex">
+        <div class="row align-items-center">
+            <div class="col-md-6 hero-text-wrapper">
+                <h1>RELIABLE ELECTICAL SOLUTION FOR YOUR HOME & BUSINESS</h1>
+                <p>Expert electrical services, from installation to repairs.Safe, efficient and done right the first time. Cotnact us today for a <b>Free Quote</b></p>
+                <a class="button-style-1 mt-3" href="#" data-bs-toggle="modal" data-bs-target="#appointmentModal">Get A Free Quote</a>
+            </div>
+        </div>
+    </div>
+  </div>
+
+
+  <!-- UINAMED -->
+  <div class="container-fluid">
+    <div class="row">
+        <div class="col-md-10 col-xl-9 col-xxl-7 p-0">
+            <div id="unnamed-elemnt">
+              <div class="container">
+                <div class="row">
+                    <div class="col-md-3 mx-auto pt-5">
+                        <span><b>Working Hours</b></span></br>
+                        <span>Mon - Fri: 08:00 - 20:00</span>
+                    </div>
+                    <div class="col-md-3 pt-5">
+                        <span><b>Area of Operating</b></span></br>
+                        <span>South London</span>
+                    </div>
+                    <div class="col-md-3 mx-auto pt-5">
+                        <span><b>Get to us</b></span></br>
+                        <span>+Phone, Viber, E-mail</span>
+                    </div>
+                </div>
+              </div>
+            </div>
+          
+        </div>
+    </div>
+  </div>
+
+
+<!-- SERVICES -->
+<div class="services pt-5">
+  <div class="container p-5 px-0">
+    <div class="row">
+      <div class="col-md-4"><div class="service-box">
+        <div class="img-placeholder"></div>
+        <h4><b>Reneweble Energy</b></h4>
+        <p>Lorem upsm doler amed himbs arem ichick. hibiscus of the light on dus ban irdik komik son bin mek. uch is fi korusak ti ha mu sono li pak.</p>
+        <a class="service-btn" href="renewable.html">Continue</a>
+        </div>
+      </div>
+      <div class="col-md-4"><div class="service-box">
+        <div class="img-placeholder"></div>
+        <h4><b>Unit Replacement</b></h4>
+        <p>Lorem upsm doler amed himbs arem ichick. hibiscus of the light on dus ban irdik komik son bin mek. uch is fi korusak ti ha mu sono li pak.</p>
+        <a class="service-btn" href="unit-replace.html">Continue</a>
+        </div>
+      </div>
+      <div class="col-md-4"><div class="service-box">
+        <div class="img-placeholder"></div>
+        <h4><b>Property Rewiring</b></h4>
+        <p>Lorem upsm doler amed himbs arem ichick. hibiscus of the light on dus ban irdik komik son bin mek. uch is fi korusak ti ha mu sono li pak.</p>
+        <a class="service-btn" href="rewiring.html">Continue</a>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4"><div class="service-box">
+        <div class="img-placeholder"></div>
+        <h4><b>Candition Reports</b></h4>
+        <p>Lorem upsm doler amed himbs arem ichick. hibiscus of the light on dus ban irdik komik son bin mek. uch is fi korusak ti ha mu sono li pak.</p>
+        <a class="service-btn" href="reports.html">Continue</a>
+        </div>
+      </div>
+      <div class="col-md-4"><div class="service-box">
+        <div class="img-placeholder"></div>
+        <h4><b>General Electircal Service</b></h4>
+        <p>Lorem upsm doler amed himbs arem ichick. hibiscus of the light on dus ban irdik komik son bin mek. uch is fi korusak ti ha mu sono li pak.</p>
+        <a class="service-btn" href="general.html">Continue</a>
+        </div>
+      </div>
+      <div class="col-md-4"><div class="service-box service-box-extra">
+        <div class="img-placeholder"></div>
+        <h4><b>Non-Elecric Work</b></h4>
+        <p>Lorem upsm doler amed himbs arem ichick. hibiscus of the light on dus ban irdik komik son bin mek. uch is fi korusak ti ha mu sono li pak.</p>
+        <a class="service-btn" href="non-electircal.html">Continue</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="range-services">
+  <div class="container-fluid p-5">
+    <div class="row">
+      <div class="col-xxl-6">
+        <h4 class="go-yellow"><b>Range Of Service</b></h4>
+        <p>Proudly to offer professional electrical services across London, ensuring safe and reliable solutions for residential, commercial, and industrial clients. Whether you need electrical repairs, installations, or emergency assistance, always ready to serve you.</p>
+        <p>Not sure if we cover your area? Contact us today at +44 123 45678 or info@zenithelectrics.uk to check availability and get a free quote!</p>
+        <div class="row">
+          <div class="col-lg-4">
+            <div>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ffab1d" class="bi bi-lightning-charge-fill" viewBox="0 0 16 16">
+                <path d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09z"/>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ffab1d" class="bi bi-lightning-charge-fill" viewBox="0 0 16 16">
+                <path d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09z"/>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ffab1d" class="bi bi-lightning-charge-fill" viewBox="0 0 16 16">
+                <path d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09z"/>
+              </svg>
+              <span style="color: #ffab1d;"><b> ZONE 1</b></span>
+            </div>
+            <p>
+              This zone includes our primary service areas where we have the fastest response times. We can usually offer same-day service for emergencies and next-day bookings for standard electrical work. </br>Westminster, City of London, Camden, Islington
+            </p>
+          </div>
+          <div class="col-lg-4">
+            <div>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ffebca" class="bi bi-lightning-charge-fill" viewBox="0 0 16 16">
+                <path d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09z"/>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ffebca" class="bi bi-lightning-charge-fill" viewBox="0 0 16 16">
+                <path d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09z"/>
+              </svg>
+              <span style="color: #ffebca;"><b> ZONE 2</b></span>
+            </div>
+            <p>
+              This zone includes our primary service areas where we have the fastest response times. We can usually offer same-day service for emergencies and next-day bookings for standard electrical work. </br>Westminster, City of London, Camden, Islington
+            </p>
+          </div>
+          <div class="col-lg-4">
+            <div>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff" class="bi bi-lightning-charge-fill" viewBox="0 0 16 16">
+                <path d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09z"/>
+              </svg>
+              <span style="color: #fff;"><b> ZONE 3</b></span>
+            </div>
+            <p>
+              This zone includes our primary service areas where we have the fastest response times. We can usually offer same-day service for emergencies and next-day bookings for standard electrical work. </br>Westminster, City of London, Camden, Islington
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<div class="contact-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <img src="images/connect.png" alt="">
+      </div>
+      <div class="col-md-3 d-flex align-items-center">
+        <div>
+        <h4><b><span class="go-yellow">LET'S MAKE</span> CONNECTION</b></h4>
+      <p>Have a question or need a quote? Fill out the form, and our expert electricians will get back to you as soon as possible. We aim to respond within <b>24 hours.</b>
+      </p>
+    </div>
+      </div>
+      <div class="col-md-5 d-flex align-items-center">
+        <div class="w-100">
+        <form>
+          <div>
+            <input type="text" class="form-control" id="name" placeholder="Your Name">
+          </div>
+          
+          <div>
+            <input type="email" class="form-control" id="email" placeholder="name@example.com">
+          </div>
+          
+          <div>
+            <textarea class="form-control" id="message" rows="4" placeholder="Your Message"></textarea>
+          </div>
+          
+          <button type="submit" class="btn btn-primary w-100">Send</button>
+        </form>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container p-5">
+  <div class="row">
+    <div class="col-md-3 col-sm-6">
+      <h5><b>Contact Information</b></h5>
+      <ul>
+        <li>info@zenithelectrics.com</li>
+        <li>+44 123 4567</li>
+        <li><b>Working Hours:</b></br>09:00 - 18:00 | Mon - Fri</li>
+      </ul>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <h5><b>Quick Links</b></h5>
+      <ul>
+        <li>About</li>
+        <li>Services</li>
+        <li>Prices</li>
+        <li>FAQs</li>
+      </ul>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <h5><b>Social Networks</b></h5>
+      <ul>
+        <li>Instagram</li>
+        <li>Facebook</li>
+        <li>Youtube</li>
+      </ul>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <h5><b>Zenith BS Elctrical</b></h5>
+      <p>Lorem upsm doler amed himbs arem ichick. hibiscus of the light on dus ban irdik komik son bin mek.</p>
+    </div>
+  </div>
+</div>
+</footer>
+
+
+</div>
+
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.min.js" integrity="sha384-RuyvpeZCxMJCqVUGFI0Do1mQrods/hhxYlcVfGPOfQtPJh0JCw12tUAZ/Mv10S7D" crossorigin="anonymous"></script>
+  <script>
+     // Hide loading screen after 3 seconds
+    setTimeout(() => {
+      document.getElementById('loadingScreen').style.display = 'none';
+      document.getElementById('mainContent').style.display = 'block';
+    }, 3000);
+
+
+
+    //MODAL
+    document.getElementById('appointmentForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  alert('Appointment request submitted!');
+  // You can replace this with actual form handling logic (e.g., AJAX or backend submission)
+  const modal = bootstrap.Modal.getInstance(document.getElementById('appointmentModal'));
+  modal.hide();
+});
+  </script>
+</body>
+</html>
