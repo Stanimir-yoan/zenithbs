@@ -28,6 +28,9 @@
   .go-yellow{
     color: var(--color-yellow);
   }
+  .bolded{
+    font-weight: 700;
+  }
 
 /* top-bar */
 .top-bar {
@@ -126,7 +129,6 @@
   }
   #unnamed-elemnt span{
     position: relative;
-    left: 10%;
   }
   
   /* Quick Call Button */
@@ -177,6 +179,19 @@
     font-weight: bold;
     display: block;
     min-width: 250px;
+    width: 300px;
+}
+.button-style-2{
+    background-color: var(--color-yellow);
+    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+    padding: 15px 30px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    display: block;
+    text-align: center;
+    min-width: 250px;
+    width: 350px;
 }
 
 /* SERVICES */
@@ -286,6 +301,7 @@
 }
 .footer ul li{
   list-style: none;
+  text-align: left;
 }
 
 
@@ -323,7 +339,7 @@
 .modal-dialog{
   border-radius: none;
 }
-#appointmentForm > .btn{
+#appointmentForm > .btn, #appointmentForm2 > .btn{
   width: 100%;
   background-color: var(--color-yellow);
 }
@@ -436,6 +452,9 @@
   }
 
   @media (max-width: 768px) {
+    .box{
+      top:65vh;
+    }
     .range-services{
       background-image: none;
       height: auto;
@@ -449,7 +468,7 @@
     }
     .contact-section{
       padding: 40px 0;
-    }
+    }x
     #unnamed-elemnt{
         position: relative;
         margin-top: -50px;
@@ -459,7 +478,7 @@
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
       }
     .hero-text-wrapper{
-        background-color: var(--color-light-grey);
+        background-color: rgba(255, 255, 255, 0.42);
     }
     .navbar-brand {
       flex: 1 1 auto;
