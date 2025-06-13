@@ -472,6 +472,9 @@
     .contact-section{
       padding: 40px 0;
     }
+    .top-bar-left{
+      width: 85%;;
+    }
     #unnamed-elemnt{
         position: relative;
         margin-top: -50px;
