@@ -168,6 +168,7 @@
     background-position: center center;
     background-size: cover;
     display: grid;
+    position: relative;
 }
 
 .button-style-1{
@@ -269,9 +270,10 @@
   background-repeat: no-repeat;
 }
 .range-services p{
-  color: white;
-	text-shadow: 0px 1px 2px var(--color-blue);
-
+    font-weight: bolder;
+    -webkit-text-fill-color: white;
+    -webkit-text-stroke-width: 0.6px;
+    -webkit-text-stroke-color: #3a424d;
 }
 
 
@@ -285,6 +287,7 @@
 .contact-section input, .contact-section textarea{
   border: solid 1px #ccc;
   border-radius: 0;
+  padding: 1rem;
 }
 .contact-section button{
   border-radius: 0;
@@ -435,7 +438,7 @@
   }
   
 
-    @media (max-width: 910px) {
+    @media (max-width: 1400px) {
       .range-services{
         background-image: none;
       }
@@ -468,17 +471,23 @@
     }
     .contact-section{
       padding: 40px 0;
-    }x
+    }
     #unnamed-elemnt{
         position: relative;
         margin-top: -50px;
         text-align: center;
         height: 400px;
         background-color: var(--color-blue);
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        clip-path: none
       }
     .hero-text-wrapper{
-        background-color: rgba(255, 255, 255, 0.42);
+    background-color: rgba(255, 255, 255, 0.42);
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    left: 0;
+    padding-top: 30%;
+    right: 0;
     }
     .navbar-brand {
       flex: 1 1 auto;
