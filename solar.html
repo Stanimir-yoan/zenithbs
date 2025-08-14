@@ -27,7 +27,47 @@
 </head>
 <body class="m-0">
 
+     <!-- Modal -->
+<div class="modal fade" id="appointmentModal" tabindex="-1" aria-labelledby="appointmentModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      
+      <div class="modal-header">
+        <h5 class="modal-title" id="appointmentModalLabel">Get A FREE Quote</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
 
+      <div class="modal-body">
+        <form id="appointmentForm">
+          <div class="mb-3">
+            <label for="name" class="form-label">Full Name</label>
+            <input type="text" class="form-control" id="name" required>
+          </div>
+          
+          <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="email" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="phone" class="form-label">Phone Number</label>
+            <input type="tel" class="form-control" id="phone" required>
+          </div>
+
+         
+
+          <div class="mb-3">
+            <label for="message" class="form-label">Job Request Details</label>
+            <textarea class="form-control" id="message" rows="3"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
 
     <!-- Top Bar with Angled Split -->
     <div class="top-bar">
@@ -69,7 +109,7 @@
               <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
               <li class="nav-item"><a class="nav-link" href="prices.html">Prices</a></li>
               <li class="nav-item"><a class="nav-link" href="faqs.html">FAQs</a></li>
-              <li class="nav-item"><a class="nav-link" href="contacts.html">Contacts</a></li>
+              <li class="nav-item"><a class="nav-link" href="index.html#contact">Contacts</a></li>
               <li class="nav-item">
                 <button class="btn btn-quick-call d-flex align-items-center">
                   <i class="bi bi-telephone-fill"></i>
@@ -81,24 +121,55 @@
         </div>
     </nav>
       
+      
 
  <div class="inner-page-content p-5">
   <div class="container">
     <div class="inner-img-box d-flex justify-content-center align-items-center mb-5" style="background-image: url('images/unit-replace.jpg');">
       <div>
-         <h3 class="z-2 position-relative" style="color:#fff">SERVICES - ZENITH BS ELECTICAL</h3>
+         <h3 class="z-2 position-relative" style="color:#fff">Solar Panels: Coming Soon</h3>
       </div>
       <div class="overlay-solid"></div>
     </div>
-    <div class="row text-center">
-      <h3>Content to be addded...</h3>
+  
+    <!-- Solar Panel Installation Section -->
+<section class="py-5">
+    <div class="container">
+        <p class="text-center mb-5">We’re excited to announce that we’re working on offering solar panel installation services to help you harness clean, renewable energy. While this service is not yet available, our team is diligently preparing to bring you high-quality, professional installations that reduce energy costs and support sustainability.</p>
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body text-center">
+                        <i class="fa-solid fa-solar-panel"></i>
+                        <h5 class="card-title">Future Savings</h5>
+                        <p class="card-text">Our upcoming solar solutions will help you save on energy bills with tailored, efficient systems.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body text-center">
+                        <i class="fa-solid fa-solar-panel"></i>
+                        <h5 class="card-title">Eco-Friendly Focus</h5>
+                        <p class="card-text">We’re committed to offering sustainable energy solutions to reduce your carbon footprint.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+</section>
 
- 
+<!-- Call to Action Section -->
+<section class="py-5 text-center">
+    <div class="container">
+        <h2 class="mb-4">Stay Tuned for Solar Solutions</h2>
+        <p>We’re not offering solar panel installations just yet, but we’re working hard to bring this service to you soon. Contact us to stay updated and get a quote as soon as we launch.</p>
+       
+    </div>
+</section>
 
 </div>
  </div>
-
 
 
 

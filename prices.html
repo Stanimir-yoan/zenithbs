@@ -107,10 +107,10 @@
           >
             <ul class="navbar-nav d-flex align-items-center gap-3 mb-0">
               <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-              <li class="nav-item"><a class="nav-link" href="index.html#services">Services</a></li>
-              <li class="nav-item"><a class="nav-link" href="prices.htcontactml">Prices</a></li>
+              <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+              <li class="nav-item"><a class="nav-link" href="prices.html">Prices</a></li>
               <li class="nav-item"><a class="nav-link" href="faqs.html">FAQs</a></li>
-              <li class="nav-item"><a class="nav-link" href="index.html#contact">Contacts</a></li>
+              <li class="nav-item"><a class="nav-link" href="contacts.html">Contacts</a></li>
               <li class="nav-item">
                 <button class="btn btn-quick-call d-flex align-items-center">
                   <i class="bi bi-telephone-fill"></i>
@@ -124,11 +124,14 @@
       
       
 
- <div class="inner-page-content p-md-5">
+ <div class="inner-page-content p-5">
+<div class="container my-5 d-flex justify-content-center align-items-center">
+<div class="justify-content-center align-items-center">
 
 
-  <div class="container-md my-5">
-  <h2 class="mb-4 text-center">Service Pricing</h2>
+<!-- LOCATION FINDER -->
+ <div id="prices" style="display: none;">
+ <h2 class="mb-4 text-center">Service Pricing</h2>
   <div class="table-responsive">
     <table class="table table-bordered table-hover align-middle">
       <thead class="table-custom">
@@ -172,16 +175,30 @@
       </tbody>
     </table>
   </div>
+</div>
 
-<a href="#" class="button-style-1" data-bs-toggle="modal" data-bs-target="#appointmentModal">Get A Quote</a>
 
+<div id="postcode-prompt" style="display: none;">
+  <img src="images/location-find-ic.png" alt="">
+<div id="location-message"></div>
+  <label for="postcode">Enter your postcode to view prices:</label>
+  <input type="text" id="postcode" placeholder="e.g. SE15">
+  <button onclick="checkPostcode()">Submit</button>
+</div>
+
+<div id="get-quote" style="display: none;">
+  <h4>Looks like you are out of our standard service zone :( </h4>
+  <p>You're still welcome to contact us and get a custom quote</p>
+  <a class="button-style-2 quote-button" href="#" data-bs-toggle="modal" data-bs-target="#appointmentModal">Get a Quote</a> 
 </div>
 
 
 
 
- </div>
+</div>
 
+ </div>
+</div>
 
 
 
@@ -244,6 +261,70 @@
   const modal = bootstrap.Modal.getInstance(document.getElementById('appointmentModal'));
   modal.hide();
 });
+
+
+
+//IP GEOLOCATION
+  const southLondonBoroughs = [
+    "lambeth", "southwark", "lewisham", "greenwich",
+    "croydon", "wandsworth", "merton", "bromley", "sutton"
+  ];
+  const southLondonPrefixes = ["SE", "SW", "CR", "BR"];
+
+  function showPrices() {
+    document.getElementById("prices").style.display = "block";
+    localStorage.setItem("locationVerified", "no"); // change no to yes to make localstorage work
+  }
+
+  function askForPostcode() {
+    document.getElementById("postcode-prompt").style.display = "block";
+    document.getElementById("location-message").innerText =
+      "We couldn't confirm you're in the same area we are operating in.";
+  }
+
+  function showQuoteOption() {
+    document.getElementById("get-quote").style.display = "block";
+  }
+
+  function checkPostcode() {
+    const input = document.getElementById("postcode").value.trim().toUpperCase();
+    if (southLondonPrefixes.some(prefix => input.startsWith(prefix))) {
+      showPrices();
+      document.getElementById("postcode-prompt").style.display = "none";
+    } else {
+      document.getElementById("postcode-prompt").style.display = "none";
+      showQuoteOption();
+    }
+  }
+
+  // Check localStorage first
+  if (localStorage.getItem("locationVerified") === "yes") {
+    showPrices();
+  } else {
+    // Try to detect via IP
+    fetch('https://ipapi.co/json/')
+      .then(res => res.json())
+      .then(data => {
+        const city = data.city?.toLowerCase() || "";
+        const region = data.region?.toLowerCase() || "";
+        const postal = data.postal?.toUpperCase() || "";
+
+        const matched =
+          southLondonBoroughs.includes(city) ||
+          southLondonBoroughs.includes(region) ||
+          southLondonPrefixes.some(prefix => postal.startsWith(prefix));
+
+        if (matched) {
+          showPrices();
+        } else {
+          askForPostcode();
+        }
+      })
+      .catch(() => {
+        askForPostcode();
+      });
+  }
+
   </script>
 </body>
 </html>
