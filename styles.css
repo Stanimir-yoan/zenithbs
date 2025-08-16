@@ -360,8 +360,12 @@
 
 /* INNER */
 .inner-page-content{
-  background-color: var(--color-light-blue);
+  background-color: #f9f9f9;
   min-height: 60vh;
+}
+.inner-page-content p{
+  font-size: 1.3rem;
+  font-weight: 400;
 }
 .inner-img-box{
   width: 100%;
@@ -770,3 +774,33 @@ text{
       display: none;
     }
   }
+
+
+  /* GALLERY */
+   .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .card img {
+      width: 100%;
+      display: block;
+    }
+
+    .caption {
+      display: flex;
+      justify-content: space-around;
+      background: #222;
+      color: #fff;
+      padding: 8px;
+      font-size: 14px;
+      font-weight: bold;
+    }
